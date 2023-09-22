@@ -1,0 +1,7 @@
+Resultados/Gabriel/completo/aluno.c: In function ‘LeAluno’:
+Resultados/Gabriel/completo/aluno.c:20:23: warning: unused variable ‘j’ [-Wunused-variable]
+   20 |     int matricula, i, j, n1, n2, n3;
+      |                       ^
+Resultados/Gabriel/completo/aluno.c:20:20: warning: unused variable ‘i’ [-Wunused-variable]
+   20 |     int matricula, i, j, n1, n2, n3;
+      |                    ^
