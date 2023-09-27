@@ -1,0 +1,11 @@
+Resultados/Gabriel/main/data.c: In function ‘VerificaDataValida’:
+Resultados/Gabriel/main/data.c:15:41: warning: unused variable ‘ano’ [-Wunused-variable]
+   15 |     int dia = data.dia, mes = data.mes, ano = data.ano;
+      |                                         ^~~
+Resultados/Gabriel/main/data.c: In function ‘NumeroDiasMes’:
+Resultados/Gabriel/main/data.c:125:41: warning: unused variable ‘ano’ [-Wunused-variable]
+  125 |     int dia = data.dia, mes = data.mes, ano = data.ano;
+      |                                         ^~~
+Resultados/Gabriel/main/data.c:125:9: warning: unused variable ‘dia’ [-Wunused-variable]
+  125 |     int dia = data.dia, mes = data.mes, ano = data.ano;
+      |         ^~~
