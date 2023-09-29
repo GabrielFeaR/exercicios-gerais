@@ -1,0 +1,13 @@
+Resultados/Gabriel/main/utils.c: In function ‘ObtemMaiorEMenorPrimo’:
+Resultados/Gabriel/main/utils.c:31:9: warning: statement with no effect [-Wunused-value]
+   31 |         for (m; m <= n; m++)
+      |         ^~~
+Resultados/Gabriel/main/utils.c:30:13: warning: unused variable ‘i’ [-Wunused-variable]
+   30 |         int i;
+      |             ^
+Resultados/Gabriel/main/utils.c:28:22: warning: unused variable ‘mee’ [-Wunused-variable]
+   28 |         int maa = n, mee = m;
+      |                      ^~~
+Resultados/Gabriel/main/utils.c:28:13: warning: unused variable ‘maa’ [-Wunused-variable]
+   28 |         int maa = n, mee = m;
+      |             ^~~
