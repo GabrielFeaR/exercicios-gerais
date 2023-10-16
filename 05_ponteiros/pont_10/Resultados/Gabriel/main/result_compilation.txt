@@ -1,0 +1,4 @@
+Resultados/Gabriel/main/pessoa.c: In function ‘AssociaFamiliasGruposPessoas’:
+Resultados/Gabriel/main/pessoa.c:81:10: warning: unused variable ‘temp’ [-Wunused-variable]
+   81 |     char temp[100];
+      |          ^~~~
