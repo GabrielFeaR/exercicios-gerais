@@ -1,49 +1,86 @@
-#ifndef EVENTOS_H
-#define EVENTOS_H
+#include <stdio.h>
+#include <string.h>
+#include "evento.h"
 
-#define MAX_EVENTOS 10
+void cadastrarEvento(Evento* eventos, int* numEventos)
+{
+    if (*numEventos == 10)
+    {
+        printf("Limite de eventos atingido!\n");
+        return;
+    }
+    scanf("%s", (eventos+ *numEventos) -> nome);
+    scanf("%d %d %d", &(eventos+ *numEventos) -> dia, &(eventos+ *numEventos) -> mes, &(eventos+ *numEventos) -> ano);
+    (*numEventos)++;
+    printf("Evento cadastrado com sucesso!\n");
+}
 
-//Estrutura para representar um evento no calendário. 
-typedef struct {
-    char nome[50]; // Nome do evento.
-    int dia;       // Dia do evento.
-    int mes;       // Mês do evento.
-    int ano;       // Ano do evento.
-} Evento;
+void exibirEventos(Evento* eventos, int* numEventos)
+{
+    int i;
+    if (*numEventos == 0)
+    {
+       printf("Nenhum evento cadastrado.\n");
+       return; 
+    }
+    printf("Eventos cadastrados:\n");
+    for (i = 0; i < *numEventos; i++)
+    {
+        printf("%02d - %s - %02d/%02d/%02d\n", i, (eventos + i ) -> nome, (eventos + i) -> dia, (eventos + i) -> mes, (eventos + i) -> ano);
+    }
+}
 
-/**
- * Cadastra um novo evento no calendário e o insere na próxima posição do array.
- *
- * @param eventos Array de eventos onde o novo evento será cadastrado.
- * @param numEventos Ponteiro para o número atual de eventos cadastrados.
- */
-void cadastrarEvento(Evento* eventos, int* numEventos);
+void trocarDataEvento(Evento* eventos, int* numEventos)
+{
+    int numEvento;
+    scanf("%d", &numEvento);
+    if (numEventos > *numEventos || numEvento < 0)
+    {
+        printf("Indice invalido!\n");
+        return;
+    }
+    int dia, mes, ano;
+    scanf("%d %d %d", &dia, &mes, &ano);
+    int i;
+    for (i = 0; i < *numEventos; i++)
+    {
+        if (i == numEvento)
+        {
+            (eventos+i) -> dia = dia;
+            (eventos+i) -> mes = mes;
+            (eventos+i) -> ano = ano;
+            break;
+        }
+    }
+}
 
-/**
- * Exibe todos os eventos cadastrados no calendário.
- *
- * @param eventos Array de eventos a serem exibidos.
- * @param numEventos Ponteiro para o número total de eventos cadastrados.
- */
-void exibirEventos(Evento* eventos, int* numEventos);
-
-/**
- * Troca a data de um evento específico no calendário.
- *
- * @param eventos Array de eventos onde o evento será modificado.
- * @param numEventos Ponteiro para o número total de eventos cadastrados.
- */
-void trocarDataEvento(Evento* eventos, int* numEventos);
-
-/**
- * Troca a posição de dois eventos, a partir do índice, dentro do array de eventos.
- *
- * @param eventos Array de eventos onde a troca será realizada.
- * @param indiceA Ponteiro para o primeiro índice.
- * @param indiceB Ponteiro para o segundo índice.
- * @param numEventos Ponteiro para o número total de eventos cadastrados.
- */
-void trocarIndicesEventos(Evento* eventos, int* indiceA, int* indiceB, int* numEventos);
-
-
-#endif
+void trocarIndicesEventos(Evento* eventos, int* indiceA, int* indiceB, int* numEventos)
+{  
+    if (*indiceA > *numEventos || *indiceA < 0)
+    {
+        printf("Indices invalidos!\n");
+        return;
+    }
+     if (*indiceB > *numEventos || *indiceB < 0)
+    {
+        printf("Indices invalidos!\n");
+        return;
+    }
+    Evento temp;
+    int i, j;
+    for (i = 0; i < *numEventos; i++)
+    {
+        if (i == *indiceA)
+        {
+            for (j = 0; j < *numEventos; j++)
+            {
+                if (j == *indiceB)
+                {
+                    temp = *(eventos+i);
+                    *(eventos+i) = *(eventos+j);
+                    *(eventos+j) = temp;
+                }
+            }
+        }
+    }
+}

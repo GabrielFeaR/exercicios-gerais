@@ -7,6 +7,17 @@ void InicializaDataParam( int dia, int mes, int ano, tData *data)
     data -> dia = dia;
     data -> mes = mes;
     data -> ano = ano;
+
+    if (data -> mes > 12)
+    {
+        data -> mes = 12;
+    }
+
+    int qtdDia = InformaQtdDiasNoMes(data);
+    if (data -> dia > qtdDia)
+    {
+        data -> dia = qtdDia;
+    }
 }
 
 void LeData( tData *data )
@@ -18,7 +29,7 @@ void LeData( tData *data )
 
 void ImprimeData( tData *data )
 {
-    printf("'%02d/%02d/%02d'\n", data -> dia, data -> mes, data -> ano);
+    printf("'%02d/%02d/%02d'", data -> dia, data -> mes, data -> ano);
 }
 
 int EhBissexto( tData *data )
@@ -103,7 +114,7 @@ void AvancaParaDiaSeguinte( tData *data )
         {
             mes++;
         }
-        else if (mes == 12)
+        else if (mes == 12 || mes > 12)
         {
             mes = 1;
             ano++;
@@ -120,7 +131,7 @@ void AvancaParaDiaSeguinte( tData *data )
 
 int EhIgual( tData *data1, tData *data2 )
 {
-    if (data1 -> dia == data2 -> dia && data1 -> mes == data2 -> mes && data1 -> ano == data2 -> ano)
+    if ((data1 -> dia == data2 -> dia && data1 -> mes == data2 -> mes) && data1 -> ano == data2 -> ano)
     {
         return 1;
     }

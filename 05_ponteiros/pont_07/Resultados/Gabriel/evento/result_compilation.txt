@@ -1,0 +1,4 @@
+Resultados/Gabriel/evento/evento.c: In function ‘trocarDataEvento’:
+Resultados/Gabriel/evento/evento.c:37:20: warning: comparison between pointer and integer
+   37 |     if (numEventos > *numEventos || numEvento < 0)
+      |                    ^

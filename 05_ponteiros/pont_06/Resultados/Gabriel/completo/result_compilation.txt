@@ -1,7 +1,14 @@
+Resultados/Gabriel/completo/data.c: In function ‘EhBissexto’:
+Resultados/Gabriel/completo/data.c:37:28: warning: unused variable ‘mes’ [-Wunused-variable]
+   37 |     int dia = data -> dia, mes = data -> mes, ano = data -> ano;
+      |                            ^~~
+Resultados/Gabriel/completo/data.c:37:9: warning: unused variable ‘dia’ [-Wunused-variable]
+   37 |     int dia = data -> dia, mes = data -> mes, ano = data -> ano;
+      |         ^~~
 Resultados/Gabriel/completo/data.c: In function ‘InformaQtdDiasNoMes’:
-Resultados/Gabriel/completo/data.c:35:47: warning: unused variable ‘ano’ [-Wunused-variable]
-   35 |     int dia = data -> dia, mes = data -> mes, ano = data -> ano;
+Resultados/Gabriel/completo/data.c:47:47: warning: unused variable ‘ano’ [-Wunused-variable]
+   47 |     int dia = data -> dia, mes = data -> mes, ano = data -> ano;
       |                                               ^~~
-Resultados/Gabriel/completo/data.c:35:9: warning: unused variable ‘dia’ [-Wunused-variable]
-   35 |     int dia = data -> dia, mes = data -> mes, ano = data -> ano;
+Resultados/Gabriel/completo/data.c:47:9: warning: unused variable ‘dia’ [-Wunused-variable]
+   47 |     int dia = data -> dia, mes = data -> mes, ano = data -> ano;
       |         ^~~

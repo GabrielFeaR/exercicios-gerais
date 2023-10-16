@@ -1,0 +1,23 @@
+
+===== Menu =====
+1 - Cadastrar um evento
+2 - Exibir todos os eventos
+3 - Trocar data de um evento
+4 - Trocar a posicao entre dois eventos
+5 - Sair
+Evento cadastrado com sucesso!
+Evento cadastrado com sucesso!
+Evento cadastrado com sucesso!
+Eventos cadastrados:
+00 - Viagem - 12/08/2003
+01 - Corrida - 23/11/2017
+02 - Inauguracao - 09/09/2009
+Indice invalido!
+Opcao invalida!
+Opcao invalida!
+Opcao invalida!
+Eventos cadastrados:
+00 - Viagem - 12/08/2003
+01 - Corrida - 23/11/2017
+02 - Inauguracao - 09/09/2009
+Saindo...

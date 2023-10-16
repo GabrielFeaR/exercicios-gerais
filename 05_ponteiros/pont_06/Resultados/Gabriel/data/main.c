@@ -15,7 +15,8 @@ int main()
     while(!EhIgual(&data, &dataFim))
     {
         ImprimeData(&data);
-
+        printf("\n");
+        
         AvancaParaDiaSeguinte(&data);
         
     }

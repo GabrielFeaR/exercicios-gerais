@@ -1,52 +1,74 @@
-#ifndef _PESSOA_H_
-#define _PESSOA_H_
+#include <stdio.h>
+#include <string.h>
+#include "pessoa.h"
 
-typedef struct Pessoa tPessoa;
+tPessoa CriaPessoa()
+{
+    tPessoa pessoa;
+    pessoa.nome[0] = '\0';
+    pessoa.pai = NULL;
+    pessoa.mae = NULL;
+    return pessoa;
+}
 
-struct Pessoa{
-    char nome[100];
-    tPessoa *pai;
-    tPessoa *mae;
-};
+void LePessoa(tPessoa *pessoa)
+{
+    scanf(" %[^\n]", pessoa -> nome);
+}
 
-/**
- * @brief Cria uma nova pessoa com nome vazio (primeiro caractere igual a '\0') e inicializa os ponteiros para pai e mae com NULL.
- * 
- * @return Uma nova pessoa e sem pais.
- */
-tPessoa CriaPessoa();
+int VerificaSeTemPaisPessoa(tPessoa *pessoa)
+{
+    if (pessoa -> mae != NULL || pessoa -> pai != NULL)
+    {
+        return 1;
+    }
 
-/**
- * @brief Lê os dados de uma pessoa.
- * 
- * @param pessoa Ponteiro para a pessoa a ser lida.
- */
-void LePessoa(tPessoa *pessoa);
+    return 0;
+}
 
-/**
- * @brief Verifica se uma pessoa tem pai e/ou mae associado(s).
- * Ou seja, verifica pelo menos um dos ponteiros pai e mae é diferente de NULL.
- * 
- * @param pessoa Ponteiro para a pessoa a ser verificada.
- * 
- * @return 1 se a pessoa tiver pai e/ou mae associado(s) e 0 caso contrário.
-*/
-int VerificaSeTemPaisPessoa(tPessoa *pessoa);
+void ImprimePessoa(tPessoa *pessoa)
+{
+    if (!(pessoa -> mae == NULL && pessoa -> pai == NULL))
+    {
+        printf("NOME COMPLETO: %s\n", pessoa -> nome);
+        printf("PAI: ");
+        if (pessoa -> pai != NULL)
+        {
+            printf("%s\n", (pessoa -> pai -> nome));
+        }
+        else
+        {
+            printf("NAO INFORMADO\n");
+        }
+        printf("MAE: ");
+        if (pessoa -> mae != NULL)
+        {
+            printf("%s\n", (pessoa -> mae -> nome));
+        }
+        else
+        {
+            printf("NAO INFORMADO\n");
+        }
+        printf("\n"); 
+    } 
+}
 
-/**
- * @brief Imprime os dados de uma pessoa caso tenha pai e/ou mae associado(s).
- * Dica: use a função VerificaSeTemPaisPessoa para verificar se a pessoa tem pai e/ou mae associado(s).
- * Alem disso, imprimir o nome do irmao caso exista.
- * 
- * @param pessoa Ponteiro para a pessoa a ser impressa.
- */
-void ImprimePessoa(tPessoa *pessoa);
+void AssociaFamiliasGruposPessoas(tPessoa *pessoas)
+{
+    int qtd, i, mae, pai, filho;
+    scanf("%d", &qtd);
+    for (i = 0; i < qtd; i++)
+    {
+        scanf(" mae: %d, pai: %d, filho: %d", &mae, &pai, &filho);
+        tPessoa *Filho = (pessoas + filho);
 
-/**
- * @brief Le as associciacoes da entrada padrao e altera as pessoas de forma a representar as associacoes lidas
- * 
- * @param pessoas Vetor de pessoas a serem associadas.
- */
-void AssociaFamiliasGruposPessoas(tPessoa *pessoas);
-
-#endif
+        if (mae != -1)
+        {
+            Filho -> mae = (pessoas + mae);
+        }
+        if (pai != -1)
+        {
+            Filho -> pai = (pessoas + pai);
+        }
+    }
+}
