@@ -1,0 +1,2 @@
+Test Case: Resultados/Gabriel/completo/Casos/11
+Valgrind result: allocs: 13 frees: 13 errors: 0 contexts: 0

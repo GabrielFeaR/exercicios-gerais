@@ -1,0 +1,2 @@
+Test Case: Resultados/Gabriel/locadora/Casos/19
+Valgrind result: allocs: 67 frees: 67 errors: 0 contexts: 0
